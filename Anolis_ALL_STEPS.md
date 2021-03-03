@@ -1,7 +1,7 @@
 WORKSHOP = Anolis apletophallus 10x data Illumina (short reads) + Nanopore (long reads) 
 
  											
- 											DAY 1: CUTADAPT
+ 										# DAY 1: CUTADAPT
 
 RUNNER: Renata (pirani) + Kristin (charleskl)
 FUNCTION: we are cleaning the DNA cutting the bad sequencing and checking for any contamination
