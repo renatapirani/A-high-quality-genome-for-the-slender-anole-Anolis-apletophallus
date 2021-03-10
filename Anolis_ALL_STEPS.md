@@ -1,40 +1,19 @@
-WORKSHOP = Anolis apletophallus 10x data Illumina (short reads) + Nanopore (long reads) 
+#### WORKSHOP = Anolis apletophallus 10x data Illumina (short reads) + Nanopore (long reads) 
 
  											
- 										DAY 1: CUTADAPT
+# DAY 1: CUTADAPT
 
-RUNNER: Renata (pirani) + Kristin (charleskl)
-FUNCTION: we are cleaning the DNA cutting the bad sequencing and checking for any contamination
-PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html)
+* RUNNER: Renata (pirani) + Kristin (charleskl)
+* FUNCTION: we are cleaning the DNA cutting the bad sequencing and checking for any contamination
+* PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html)
 
-JOB FILE: /scratch/genomics/piranir/Cutadapt/
-		  /scratch/genomics/charleskl/CutAdapt
+* JOB FILE: /scratch/genomics/piranir/Cutadapt/cutadapt_26.job
+		   /scratch/genomics/charleskl/CutAdapt
 
--> 1 Job: cutadapt_26.job
+		+ **module**: ```module load bioinformatics/cutadapt/2.4```
+		+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 
-# /bin/sh                                                                                                                                   
-# ----------------Parameters---------------------- #                                                                                        
-#$ -S /bin/sh                                                                                                                               
-#$ -q mThC.q                                                                                                                                
-#$ -pe mthread 1 -l mres=6G,h_data=6G,h_vmem=6G                                                                                             
-#$ -cwd                                                                                                                                     
-#$ -N cutadapt                                                                                                                      
-#$ -o cutadapt.log                                                                                                                  
-#$ -m bea                                                                                                                                   
-#$ -M piranir@si.edu                                                                                                                         
-#                                                                                                                                           
-# ----------------Modules------------------------- #                                                                                        
-module load bioinformatics/cutadapt/2.4                                                                                                     
-#                                                                                                                                           
-# ----------------Your Commands------------------- #                                                                                        
-#                                                                                                                                           
-echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME                                                               
-echo + NSLOTS = $NSLOTS                                                                                                                     
-#                                                                                                                                           
-#                                                                                                                                           
-cutadapt -u 26 -o E28_26t_val_1.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz 
-#                                                                                                                                           
-echo = `date` job $JOB_NAME done
+
 
 
 RESULTS
