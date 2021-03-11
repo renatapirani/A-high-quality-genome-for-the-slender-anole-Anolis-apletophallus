@@ -4,16 +4,15 @@
 # DAY 1: CUTADAPT
 
 * RUNNER: Renata (pirani) + Kristin (charleskl)
-* FUNCTION: we are cleaning the DNA cutting the bad sequencing and checking for any contamination
-* PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html)
+* FUNCTION: we are cleaning the DNA  (short reads) cutting the bad sequencing and checking for any contamination
+* PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html
 
 * JOB FILE: /scratch/genomics/piranir/Cutadapt/cutadapt_26.job
 		   /scratch/genomics/charleskl/CutAdapt
 
 		+ **module**: ```module load bioinformatics/cutadapt/2.4```
 		+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
-
-
+		+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 
 
 RESULTS
@@ -28,81 +27,33 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
  											
  											
  											
- 											DAY 2: Jellyfish
+# DAY 2: Jellyfish
  											
 
-RUNNER: Renata (piranir) + Kristin (charleskl)
-FUNCTION: Run Genomescope, first you need to generate a Jellyfish histogram
+* RUNNER: Renata (piranir) + Kristin (charleskl)
+* FUNCTION: Run Genomescope, first you need to generate a Jellyfish histogram
 		  Genomescope can be used to estimate genome size from short read data
-PROGRAM WEBSITE: http://qb.cshl.edu/genomescope/
+* PROGRAM WEBSITE: http://qb.cshl.edu/genomescope/
 
-JOB FILE: /scratch/genomics/piranir/Jellyfish 
-		  /scratch/genomics/charleskl/jellyfish
+* JOB FILE: /scratch/genomics/piranir/Jellyfish/jellyfish.job 
+		  /scratch/genomics/charleskl/jellyfish/jellyfish3.job
 
--> 1 job file: jellyfish.job 
-
-# /bin/sh                                                                                                                                                                       
-# ----------------Parameters---------------------- #                                                                                                                            
-#$ -S /bin/sh                                                                                                                                                                   
-#$ -q lThM.q                                                                                                                                                                    
-#$ -pe mthread 30 -l mres=300G,h_data=10G,h_vmem=10G,himem                                                                                                                       
-#$ -cwd                                                                                                                                                                         
-#$ -j y                                                                                                                                                                         
-#$ -N jellyfish1                                                                                                                                                                
-#$ -o jellyfish1.log                                                                                                                                                            
-#$ -m bea                                                                                                                                                                       
-#$ -M piranir@si.edu                                                                                                                                                            
-#                                                                                                                                                                               
-# ----------------Modules------------------------- #                                                                                                                            
-module load bioinformatics/jellyfish/2.3.0                                                                                                                                      
-#                                                                                                                                                                               
-# ----------------Your Commands------------------- #                                                                                                                            
-#                                                                                                                                                                               
-echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME                                                                                                   
-echo + NSLOTS = $NSLOTS                                                                                                                                                         
-#                                                                                                                                                                               
-#                                                                                                                                                                               
-gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0                                                
-#                                                                                                                                                                               
-echo = `date` job $JOB_NAME done
+		+ **module**:```module load bioinformatics/jellyfish/2.3.0```                                                                                                                                      
+		+ **command**:```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
 
 
-
-ERROR: changed the permits / typing "chmod 777" , also those files are zip files. So now I need to unzip first and than to run the jellyfish code. 
+ERROR: changed the permits / typing "chmod 777" , 
+also those files are zip files. So now I need to unzip first and than to run the jellyfish code. 
  
- gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz = is to unzip the files. 
+```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz``` = is to unzip the files. 
  
 TIME: 10h to complete
 
 
+* JOB FILE: /scratch/genomics/piranir/Jellyfish/hist_jellyfish.job
 
-------------------------------
--> 2 job: hist_jellyfish.job
-
-# /bin/sh                                                                                                                    
-# ----------------Parameters---------------------- #                                                                         
-#$ -S /bin/sh                                                                                                                
-#$ -pe mthread 20 -l mres=40G,h_data=2G,h_vmem=2G                                                                            
-#$ -q mThC.q                                                                                                                 
-#$ -cwd                                                                                                                      
-#$ -j y                                                                                                                      
-#$ -N jellyfish_histo_ill                                                                                                    
-#$ -o jellyfish_histo_ill.log                                                                                                
-#$ -m bea                                                                                                                    
-#$ -M piranir@si.edu                                                                                                          
-#                                                                                                                            
-# ----------------Modules------------------------- #                                                                         
-module load bioinformatics/jellyfish                                                                                                                                                                                                                                                                                                                                                                                                                               
-
-# ----------------Your Commands------------------- #                                                                         
-#                                                                                                                            
-echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME                                                
-echo + NSLOTS = $NSLOTS                                                                                                      
-#                                                                                                                            
-jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo                                                             
-#                                                                                                                            
-echo = `date` job $JOB_NAME done   
-
+		+ **module**:```module load bioinformatics/jellyfish ```
+		+ **command**:```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
 
 
 TIME: 6 min to complete
