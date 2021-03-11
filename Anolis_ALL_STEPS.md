@@ -55,6 +55,7 @@ TIME: 10h to complete
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/hist_jellyfish.job
 
 		+ **module**: ```module load bioinformatics/jellyfish ```
+		
 		+ **command**: ```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
 
 
