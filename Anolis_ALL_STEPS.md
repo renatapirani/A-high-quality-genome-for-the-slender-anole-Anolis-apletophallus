@@ -11,8 +11,10 @@
 		   /scratch/genomics/charleskl/CutAdapt
 
 		+ **module**: ```module load bioinformatics/cutadapt/2.4```
-		+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
-		+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
+		
+		+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
+		
+		+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 
 
 RESULTS
@@ -38,8 +40,8 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/jellyfish.job 
 		  /scratch/genomics/charleskl/jellyfish/jellyfish3.job
 
-		+ **module**:```module load bioinformatics/jellyfish/2.3.0```                                                                                                                                      
-		+ **command**:```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
+		+ **module**: ```module load bioinformatics/jellyfish/2.3.0```                                                                                                                                      
+		+ **command**: ```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
 
 
 ERROR: changed the permits / typing "chmod 777" , 
@@ -52,8 +54,8 @@ TIME: 10h to complete
 
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/hist_jellyfish.job
 
-		+ **module**:```module load bioinformatics/jellyfish ```
-		+ **command**:```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
+		+ **module**: ```module load bioinformatics/jellyfish ```
+		+ **command**: ```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
 
 
 TIME: 6 min to complete
