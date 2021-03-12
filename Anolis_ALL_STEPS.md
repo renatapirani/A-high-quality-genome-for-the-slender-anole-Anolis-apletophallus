@@ -39,7 +39,7 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
 
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/jellyfish.job 
 		  /scratch/genomics/charleskl/jellyfish/jellyfish3.job
-
+		  
 		+ **module**: ```module load bioinformatics/jellyfish/2.3.0```  
 		                                                                                                                                    
 		+ **command**: ```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
