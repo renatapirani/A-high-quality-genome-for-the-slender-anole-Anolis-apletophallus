@@ -10,11 +10,11 @@
 * JOB FILE: /scratch/genomics/piranir/Cutadapt/cutadapt_26.job
 		   /scratch/genomics/charleskl/CutAdapt
 
-		+ **module**: ```module load bioinformatics/cutadapt/2.4```
+	+ **module**: ```module load bioinformatics/cutadapt/2.4```
 		
-		+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
+	+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 	
-		+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
+	+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz /scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 
 
 #### RESULTS
@@ -40,9 +40,9 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/jellyfish.job 
 		  /scratch/genomics/charleskl/jellyfish/jellyfish3.job
 		  
-		+ **module**: ```module load bioinformatics/jellyfish/2.3.0```  
+	+ **module**: ```module load bioinformatics/jellyfish/2.3.0```  
 		                                                                                                                                    
-		+ **command**: ```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
+	+ **command**: ```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
 
 
 ERROR: changed the permits / typing "chmod 777" , 
@@ -55,9 +55,9 @@ TIME: 10h to complete
 
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/hist_jellyfish.job
 
-		+ **module**: ```module load bioinformatics/jellyfish ```
+	+ **module**: ```module load bioinformatics/jellyfish ```
 		
-		+ **command**: ```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
+	+ **command**: ```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
 
 
 TIME: 6 min to complete
@@ -86,9 +86,9 @@ NEXT STEPS: download from the hydra to your computer do:
 	- Renata runs with the flag -A -S 1 
 	- Kristin runs with the flag -A -S 2  
 
-		+ **module**: ```module load bioinformatics/wtdbg2```
+	+ **module**: ```module load bioinformatics/wtdbg2```
 		
-		+ **command**: ```wtdbg2 -g 1.8g -t $NSLOTS -p 19 -A -S 1 -k 0 -s 0.05 -edge-min 2 --rescue-low-cov-edges -L 1000 ```
+	+ **command**: ```wtdbg2 -g 1.8g -t $NSLOTS -p 19 -A -S 1 -k 0 -s 0.05 -edge-min 2 --rescue-low-cov-edges -L 1000 ```
  					   ```-i /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filt.fa.gz -fo anolis_28_S1_assemble_wt ```                                                                                                                                              
                                                                                                                    
                                                                                                                                                                       
@@ -97,9 +97,9 @@ NEXT STEPS: download from the hydra to your computer do:
 		  (only Kristin run it, better results than Renata on the previous job)
   
 
-		+ **module**: ```module load bioinformatics/wtdbg2```
+	+ **module**: ```module load bioinformatics/wtdbg2```
 		
-		+ **command**: ```wtpoa-cns -t $NSLOTS -i anolis_28_S2_assembly.ctg.lay.gz -fo anolis_S2_genomedraft_raw.fa ```
+	+ **command**: ```wtpoa-cns -t $NSLOTS -i anolis_28_S2_assembly.ctg.lay.gz -fo anolis_S2_genomedraft_raw.fa ```
 		
 			
 	P.S. to check queues = Go to confluence.si.edu and to "Submitting Jobs" and "available queues". 
@@ -116,18 +116,15 @@ assembly_stats anolis_S2_genomedraft_raw.fa
 {                                                                                                                                            
   "Contig Stats": {                                                                                                                          
     "L10": 146,                                                                                                                              
-    "L30": 696,                                                                                                                              
-                                                                                                                                             
+    "L30": 696,                                                                                                                                    
     "L40": 1095,                                                                                                                             
     "L50": 1597,                                                                                                                             
     "N10": 1252139,                                                                                                                          
     "N30": 676598,                                                                                                                           
-                                                                                                                                             
     "N40": 542964,                                                                                                                           
     "N50": 428046,                                                                                                                           
     "gc_content": 43.53442576722115,                                                                                                         
-    "mean": 119098.24670711854,                                                                                                              
-                                                                                                                                             
+    "mean": 119098.24670711854                                                                                                                            
     "median": 19088.0,                                                                                                                       
     "sequence_count": 20271,                                                                                                                 
     "shortest": 952,                                                                                                                         
@@ -136,26 +133,22 @@ assembly_stats anolis_S2_genomedraft_raw.fa
   "Scaffold Stats": {                                                                                                                        
     "L10": 146,                                                                                                                              
     "L20": 380,                                                                                                                              
-    "L40": 1095,                                                                                                                             
-                                                                                                                                             
+    "L40": 1095,                                                                                                                                 
     "L50": 1597,                                                                                                                             
     "N10": 1252139,                                                                                                                          
     "N20": 874008,                                                                                                                           
-    "N40": 542964,                                                                                                                           
-                                                                                                                                             
+    "N40": 542964,                                                                                                                               
     "N50": 428046,                                                                                                                           
     "gc_content": 43.53442576722115,                                                                                                         
     "longest": 4452698,                                                                                                                      
-    "median": 19088.0,70711854,                                                                                                              
-                                                                                                                                             
+    "median": 19088.0,70711854                                                                                                                             
     "sequence_count": 20271,                                                                                                                 
     "shortest": 952,                                                                                                                         
     "total_bps": 2414240559                                                                                                                  
 } } 
 
 
-
-												
+										
 # DAY 4: Minimap/bwa
 
 
@@ -176,11 +169,11 @@ assembly_stats anolis_S2_genomedraft_raw.fa
 		finally you will run de concensus command.
 
 
-		+ **module**: ```source /home/ariasc/.bashrc```                                                                                                   
+	+ **module**: ```source /home/ariasc/.bashrc```                                                                                                   
 					 ```conda activate minimap2```
 					 ```module load bioinformatics/samtools```
 					
-		+ **command**: ```minimap2 -t40 -ax map-ont /scratch/genomics/charleskl/redbean/anolis_S2_genomedraft_raw.fa ```
+	+ **command**: ```minimap2 -t40 -ax map-ont /scratch/genomics/charleskl/redbean/anolis_S2_genomedraft_raw.fa ```
 					   ```/scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filt.fa.gz | samtools sort -@4 >anolis_S2_dbg.bam```
                                                                                                                         
 
@@ -190,17 +183,17 @@ P.S. wait for the results of the Job 1 to start the job 2.
 * 2 JOB: polish_anolis_S2_wtpoa.job
 	polishing with long reads, filetering mapping reads, and consensus with wtpoa-cns module in redbean
 
-		+ **module**: ```module load bioinformatics/samtools```
+	+ **module**: ```module load bioinformatics/samtools```
 		
-		+ **command**: ```samtools view -F0x900 /scratch/genomics/charleskl/jobs/anolis_S2_dbg.bam | /home/ariasc/programs/wtdbg2/./wtpoa-cns -t 40 -d /scra```
+	+ **command**: ```samtools view -F0x900 /scratch/genomics/charleskl/jobs/anolis_S2_dbg.bam | /home/ariasc/programs/wtdbg2/./wtpoa-cns -t 40 -d /scra```
 					   ```tch/genomics/charleskl/redbean/anolis_S2_genomedraft_raw.fa -i - -fo Anolis_dbg_cns.fa```                                                                                                                        
                                                                                                                          
 * 3 JOB: bwa_index.job
 * Indexing draft genome in bwa
 
-		+ **module**: ```module load bioinformatics/bwa/0.7.17 ```
+	+ **module**: ```module load bioinformatics/bwa/0.7.17 ```
 		
-		+ **command**: ```bwa index /scratch/genomics/charleskl/jobs/Anolis_dbg_cns.fa```
+	+ **command**: ```bwa index /scratch/genomics/charleskl/jobs/Anolis_dbg_cns.fa```
 
 
 * SHORT READS
@@ -213,10 +206,10 @@ P.S. wait for the results of the Job 1 to start the job 2.
 * 4 JOB: polish_anolis_small.job
 * bwa polishing with wtpoa-cns module from redbean
 
-		+ **module**: ```module load bioinformatics/bwa/0.7.17```
+	+ **module**: ```module load bioinformatics/bwa/0.7.17```
  					 ``` module load bioinformatics/bwa/0.7.17``` 
  					                                                                                                                        
- 		+ **command**: ```bwa mem -t 40 /scratch/genomics/charleskl/jobs/Anolis_dbg_cns.fa /scratch/genomics/charleskl/E28_26t_val_1.fq.gz /scratch/genomics```
+ 	+ **command**: ```bwa mem -t 40 /scratch/genomics/charleskl/jobs/Anolis_dbg_cns.fa /scratch/genomics/charleskl/E28_26t_val_1.fq.gz /scratch/genomics```
 					 ```/charleskl/E28_10t_R2_001_val_2.fq.gz | samtools sort -O SAM | /home/ariasc/programs/wtdbg2/./wtpoa-cns -t 40 -x sam-sr -d /scratc```
 					 ```h/genomics/charleskl/jobs/Anolis_dbg_cns.fa -i - -fo anolis_dbg.srp.fa```
 
@@ -228,7 +221,7 @@ END: to check how is your assembly data type:
 
 #### RESULTS
 
-	assembly_stats anolis_dbg.srp.fa                                                                    
+assembly_stats anolis_dbg.srp.fa                                                                    
 {                                                                                                                                 
   "Contig Stats": {                                                                                                               
     "L10": 144,                                                                                                                   
@@ -300,7 +293,7 @@ P.S. Kristin will run with -block 100000 (best results)
 		  /scratch/genomics/charleskl/Scaff10x/scaff10x.job     
 
 
-		+ **command**: ```/home/ariasc/programs/Scaff10X/src/./scaff10x -nodes 30 -align bwa -score 10 -read-s1 5 -read-s2 5 -longread 1 -gap 100 -block 20000```
+	+ **command**: ```/home/ariasc/programs/Scaff10X/src/./scaff10x -nodes 30 -align bwa -score 10 -read-s1 5 -read-s2 5 -longread 1 -gap 100 -block 20000```
  					   ```-data input2.dat Anolis_dbg_cns.fa Anolis_20k_scaf1.fa```
 
 
@@ -357,7 +350,7 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 	- Renata :  N50 = 974899 (file Anolis_dbg8_RMP_scaf1.fa)
 	AFTER: polish with Racun for long read data, we use minimap
 
-	- Python no adapters and no barcodes - short read - map with 	
+- Python no adapters and no barcodes - short read - map with 	
 
 
 
@@ -379,21 +372,19 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 
 --> 1 job: anolis_minimap_racon.job 
 	First map your clean_raw reads to your assembly with minimap.
-
-		+ **module**: ```source /home/ariasc/.bashrc```
-					  ```conda activate minimap2```
-					  
- 		+ **command**: ```minimap2 -ax map-ont -t40 /scratch/genomics/charleskl/Racon/Anolis_20k_scaf1.fa /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq > anolis_mapped_data.sam```
+	+ **module**: ```source /home/ariasc/.bashrc```
+		       ```conda activate minimap2```			  
+	+ **command**: ```minimap2 -ax map-ont -t40 /scratch/genomics/charleskl/Racon/Anolis_20k_scaf1.fa /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq > anolis_mapped_data.sam```
 
      
 
 * 2 JOB: racon.job
 
 
-		+ **module**: ```source /home/ariasc/.bashrc```
+	+ **module**: ```source /home/ariasc/.bashrc```
 					  ```conda activate racon```
 					  
- 		+ **command**: ```acon -u -t 30 /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq anolis_mapped_data.sam /scratch/genomics/charl```
+	+ **command**: ```acon -u -t 30 /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq anolis_mapped_data.sam /scratch/genomics/charl```
 					   ```eskl/Racon/Anolis_20k_scaf1.fa > anolisgenome_racon_polished.fasta````
 
 
@@ -451,7 +442,7 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 * 3 job: /scratch/genomics/piranir/Scaff10/break10xAnolis.job
 	User Time = 10:02:18:44
 
-  		+ **command**:```/home/ariasc/programs/Scaff10X/src/./break10x -nodes 30 -score 10 -gap 100 -data input2.dat ```
+	+ **command**: ```/home/ariasc/programs/Scaff10X/src/./break10x -nodes 30 -score 10 -gap 100 -data input2.dat ```
 					```anolisgenome_racon_polished.fasta scaffolds-break.fasta scaffolds-break.name```                                                                              
                                                                          
 
@@ -522,11 +513,9 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 	- cd busco
 	- and Assuming you are in the folder `/scratch/genomics/username/busco`:
 	- cp -r /share/apps/bioinformatics/augustus/conda/3.3.2/config/ .
-
-
-  		+ **module**: ```module load bioinformatics/busco/3.0.2```	
+  	+ **module**: ```module load bioinformatics/busco/3.0.2```	
   		
-  		+ **command**: ````export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                        
+ 	+ **command**: ````export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                        
 				       ```run_BUSCO.py -m genome -i scaffolds-break.fasta -o Anolis_before -l tetrapoda_odb9 -c $NSLOTS```                                                                                           
 
 
@@ -535,8 +524,7 @@ User Time = 4:16:06:52
 Summarized benchmarking in BUSCO notation for file scaffolds-break.fasta                                                                    
 BUSCO was run in mode: genome                                                                                                               
                                                                                                                                               
-        C:67.5%[S:66.7%,D:0.8%],F:16.5%,M:16.0%,n:3950                                                                                        
-                                                                                                                                              
+  C:67.5%[S:66.7%,D:0.8%],F:16.5%,M:16.0%,n:3950                                                                                     
         2664    Complete BUSCOs (C)                                                                                                           
         2633    Complete and single-copy BUSCOs (S)                                                                                           
         31      Complete and duplicated BUSCOs (D)                                                                                            
@@ -562,27 +550,26 @@ BUSCO was run in mode: genome
 	- for questions go to /scratch/stri_ap/ariasc_data/anolis_10x and the files are there.
 	- for the python file use the path /scratch/genomics/ariasc/Efish/
 	- copy those files to your folder and unzip them using - gunzip *.gz 
-
-  		+ **command**: ```python fix_reads_racon.py E28_10t_R2_001_val_2.fq E28_26t_R1_001_val_1.fq > rename_x_racon.fastq```
+   	+ **command**: ```python fix_reads_racon.py E28_10t_R2_001_val_2.fq E28_26t_R1_001_val_1.fq > rename_x_racon.fastq```
 
 	
 	- second, map reads to draft genome with minimap2
 
 
- 		+ **module**: ```source /home/ariasc/.bashrc ```
+ 	+ **module**:** ```source /home/ariasc/.bashrc ```
  					 ```conda activate minimap2````
 
-  		+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
+ 	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
   		
                                                                                                     
 * 2 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/racon_short.job
 	run racon with the *.sam file and corrected names short reads files
 
   
- 		+ **module**: ```source ~/.bashrc ``` 
- 					```conda activate racon```                                                                                                            
+ 	+ **module**:** ```source ~/.bashrc ``` 
+ 	          ```conda activate racon```               
 
-  		+ **command**: ```racon -t 30 rename_x_racon.fastq Anolis_notC_scaff.sam scaffolds-break.fasta > Anolis_racon_short.fasta```
+ 	+ **command**: ```racon -t 30 rename_x_racon.fastq Anolis_notC_scaff.sam scaffolds-break.fasta > Anolis_racon_short.fasta```
 
                                                                                                                     
                                                                                                               
@@ -592,43 +579,35 @@ User Time = 20:49:10
 - module load bioinformatics/assembly_stats
 
 {piranir@hydra-login02 Racon_shortreads]$ assembly_stats Anolis_racon_short.fasta                                                             
-  "Contig Stats": {                                                                                                                           
-                                                                                                                                              
+  "Contig Stats": {                                                                                                                                      
     "L10": 96,                                                                                                                                
     "L20": 251,                                                                                                                               
     "L40": 716,                                                                                                                               
-    "L50": 1048,                                                                                                                              
-                                                                                                                                              
+    "L50": 1048,                                                                                                                                     
     "N10": 1903798,                                                                                                                           
     "N20": 1335717,                                                                                                                           
     "N40": 825896,,                                                                                                                           
-    "N50": 642306,                                                                                                                            
-                                                                                                                                              
+    "N50": 642306,                                                                                                                                     
     "gc_content": 43.814300913156785,                                                                                                         
     "longest": 4513562,                                                                                                                       
     "median": 16518.0,4353537,                                                                                                                
-    "sequence_count": 17967,                                                                                                                  
-                                                                                                                                              
+    "sequence_count": 17967,                                                                                                                                
     "shortest": 1,                                                                                                                            
     "total_bps": 2428508377                                                                                                                   
   "Scaffold Stats": {                                                                                                                         
-    "L10": 66,                                                                                                                                
-                                                                                                                                              
+    "L10": 66,                                                                                                                                              
     "L20": 170,                                                                                                                               
     "L30": 308,                                                                                                                               
     "L50": 710,                                                                                                                               
-    "N10": 2767450,                                                                                                                           
-                                                                                                                                              
+    "N10": 2767450,                                                                                                                               
     "N20": 2026324,                                                                                                                           
     "N30": 1554505,                                                                                                                           
     "N50": 947285,,                                                                                                                           
-    "gc_content": 43.814300913156785,                                                                                                         
-                                                                                                                                              
+    "gc_content": 43.814300913156785,                                                                                                                             
     "longest": 7315638,                                                                                                                       
     "mean": 145748.69081197862,                                                                                                               
     "sequence_count": 16663,                                                                                                                  
-    "shortest": 391,                                                                                                                          
-                                                                                                                                              
+    "shortest": 391,                                                                                                                                    
     "total_bps": 2428610435                                                                                                                   
 } } 
 
@@ -659,10 +638,10 @@ User Time = 20:49:10
 	- or you can use wget "website link"
 
 
- 		+ **module**: ```module load bioinformatics/busco/3.0.2```
+	+ **module**:** ```module load bioinformatics/busco/3.0.2```
                                                                                                        
-  		+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                          
-						```run_BUSCO.py -m genome -i Anolis_racon_short.fasta -o Anolis_after -l tetrapoda_odb9 -c $NSLOTS ```
+  	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                          
+			```run_BUSCO.py -m genome -i Anolis_racon_short.fasta -o Anolis_after -l tetrapoda_odb9 -c $NSLOTS ```
                                                                                                          					
 														
 #### RESULTS:
@@ -670,8 +649,7 @@ User Time = 5:12:39:42
 
 BUSCO was run in mode: genome                                                                                                               
                                                                                                                                               
-        C:88.1%[S:87.1%,D:1.0%],F:7.0%,M:4.9%,n:3950                                                                                          
-                                                                                                                                              
+  C:88.1%[S:87.1%,D:1.0%],F:7.0%,M:4.9%,n:3950     
         3482    Complete BUSCOs (C)                                                                                                           
         3441    Complete and single-copy BUSCOs (S)                                                                                           
         41      Complete and duplicated BUSCOs (D)                                                                                            
@@ -700,22 +678,20 @@ NEXT STEPS:
 
 * FILE: Anolis_racon_short.fasta
 
-
-		+ **module**: ```source /home/ariasc/.bashrc```
-           			```conda activate minimap2 ```
+ 	+ **module**: ```source /home/ariasc/.bashrc```
+           		```conda activate minimap2 ```
                                                                                                                   
-
-  		+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/Anolis_racon_short.fasta rename_x_racon.fastq > Anolis_notC_scaff2.sam ``` 
+ 	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/Anolis_racon_short.fasta rename_x_racon.fastq > Anolis_notC_scaff2.sam ``` 
   		
                                                                                                   
 
 * 2 JOB: racon2.job
 	run racon with the *.sam file and corrected names short reads files
 
-		+ **module**: ```source ~/.bashrc```
+ 	+ **module**: ```source ~/.bashrc```
            			```conda activate racon ```	
                                                                                                                   
-   		+ **command**: ```racon -t 30 rename_x_racon.fastq Anolis_notC_scaff2.sam Anolis_racon_short.fasta > Anolis_after_polishing2.fasta```                                                                                                       
+ 	+ **command**: ```racon -t 30 rename_x_racon.fastq Anolis_notC_scaff2.sam Anolis_racon_short.fasta > Anolis_after_polishing2.fasta```                                                                                                       
                                                                                    
 
 #### RESULTS: 
@@ -724,17 +700,15 @@ NEXT STEPS:
 - module load bioinformatics/assembly_stats											
 
 [piranir@hydra-login02 Racon_shortreads]$ assembly_stats Anolis_after_polishing2.fasta                            
-  "Contig Stats": {                                                                                               
-                                                                                                                  
+  "Contig Stats": {                                                                                                        
     "L10": 95,                                                                                                    
     "L20": 246,                                                                                                   
     "L30": 446,                                                                                                   
-    "L50": 1029,                                                                                                  
-                                                                                                             
+    "L50": 1029,                                                                                                      
     "N10": 1954367,                                                                                               
     "N20": 1377123,                                                                                               
     "N30": 1062227,                                                                                               
-    "N50": 657933,                                                                                                                                                          
+    "N50": 657933,
     "gc_content": 43.815054602762736,                                                                             
     "longest": 4506118,                                                                                           
     "mean": 135760.43425915556,                                                                                   
@@ -750,16 +724,15 @@ NEXT STEPS:
     "N20": 2024021,                                                                                               
     "N30": 1556319,                                                                                               
     "N40": 1219413,                                                                                               
-    "gc_content": 43.815054602762736,                                                                                                                                        
+    "gc_content": 43.815054602762736, 
     "longest": 7305303,                                                                                           
     "mean": 146098.48418198252,                                                                                   
     "sequence_count": 16595,                                                                                      
-    "shortest": 391,                                                                                                                                                  
+    "shortest": 391,              
     "total_bps": 2424504345                                                                                       
   }                  												
 	
 
-	
 												
 # DAY 10: BUSCO 3 AFTER2
 														
@@ -774,21 +747,19 @@ NEXT STEPS:
 * input: busco3_after2.job
 
 
-		+ **module**: ```module load bioinformatics/busco/3.0.2```
+ 	+ **module**: ```module load bioinformatics/busco/3.0.2```
                                                                                                           
 
-   		+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                           
+ 	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                           
 					```run_BUSCO.py -m genome -i Anolis_after_polishing2.fasta -o Anolis_after2 -l tetrapoda_odb9 -c $NSLOTS ```
 
 													
 																												
 #### RESULTS:	
 									
-	C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950                                                              
-                                                                                                                  
+C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950                                                                                                         
         3439    Complete and single-copy BUSCOs (S)                                                               
-        40      Complete and duplicated BUSCOs (D)                                                                
-                                                                                                                  
+        40      Complete and duplicated BUSCOs (D)                                                                                                          
         279     Fragmented BUSCOs (F)                                                                             
         192     Missing BUSCOs (M)											
 														
@@ -805,11 +776,11 @@ NEXT STEPS:
 * JOB FILE: /scratch/genomics/ariasc/anolis/anolis_d1.fasta
 														
 
-		+ **module**: ```module load bioinformatics/pilon/1.23```
+	+ **module**:** ```module load bioinformatics/pilon/1.23```
 		
-   		+ **command**: ```PILON_HEAP_SIZE=1000g```                                                                                                           
-						```runpilon --genome /scratch/genomics/ariasc/anolis/Anolis_racon_short.fasta --bam /scratch/genomics/ariasc/anolis/Anolis_racon_short_sorted.bam ```
-						```--output  anolis_d1 --outdir /scratch/genomics/ariasc/anolis/ --fix bases --changes --vcf --threads $NSLOTS > /scratch/genomics/ariasc/anolis/anolis_d1_out.log ```                 
+   + **command**: ```PILON_HEAP_SIZE=1000g```                                                                                                           
+		```runpilon --genome /scratch/genomics/ariasc/anolis/Anolis_racon_short.fasta --bam /scratch/genomics/ariasc/anolis/Anolis_racon_short_sorted.bam ```
+		```--output  anolis_d1 --outdir /scratch/genomics/ariasc/anolis/ --fix bases --changes --vcf --threads $NSLOTS > /scratch/genomics/ariasc/anolis/anolis_d1_out.log ```                 
 
 											
 														
@@ -870,15 +841,15 @@ Assembly stats before kraken
 		- To check for contamination, how much of contamination we have.
 		--confidence = allows the user to specify the threshold score in the interval [0,1]
 		
-		HELP: https://github.com/DerrickWood/kraken2/issues/399
+* HELP: https://github.com/DerrickWood/kraken2/issues/399
 
 
 * 1 JOB: /scratch/genomics/piranir/Kraken2/Anolis_kraken.job
 
      
-		+ **module**: ```module load bioinformatics/kraken``` 
+	+ **module**: ```module load bioinformatics/kraken``` 
                                                                                                            
-   		+ **command**: ``` kraken2 --db /data/genomics/db/Kraken/kraken2_db/ --report kraken_report --use-names --confidence 0 --threads $NSLOTS anolis_d1.fasta``` 
+ 	+ **command**: ``` kraken2 --db /data/genomics/db/Kraken/kraken2_db/ --report kraken_report --use-names --confidence 0 --threads $NSLOTS anolis_d1.fasta``` 
                                                                                                        
 
 #### RESULTS: Anolis_kraken.log                                                   
@@ -957,9 +928,9 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 * Folder: /scratch/genomics/piranir/Kraken2/
 * 2 JOB: busco3_afterKraken.job
 
-		+ **module**: ```module load bioinformatics/busco/3.0.2 ```
+ 	+ **module**: ```module load bioinformatics/busco/3.0.2 ```
 
-   		+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
+ 	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
 						```run_BUSCO.py -m genome -i anolis_d1_r4_not_cont.fa -o Anolis_afterK -l tetrapoda_odb9 -c $NSLOTS ```                                                                                               
                                                                                           
 
@@ -988,30 +959,10 @@ RESULTS:
 
 # DAY 14: ANNOTATION 01
 	
-	repeatmasker (start annotation) -species (use something close to your orgAnism)
+repeatmasker (start annotation) -species (use something close to your orgAnism)
 	
-	AFTER USE BLAT WITH THE TRANSCRIPTOME
+AFTER USE BLAT WITH THE TRANSCRIPTOME
 	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 													
