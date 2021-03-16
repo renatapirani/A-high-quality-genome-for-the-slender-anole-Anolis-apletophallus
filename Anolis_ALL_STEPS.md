@@ -514,7 +514,9 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 	- cd busco
 	- and Assuming you are in the folder `/scratch/genomics/username/busco`:
 	- cp -r /share/apps/bioinformatics/augustus/conda/3.3.2/config/ .
-  	+ **module**: ```module load bioinformatics/busco/3.0.2```	
+
+
+  + **module**: ```module load bioinformatics/busco/3.0.2```	
   		
  	+ **command**: ````export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                        
 				       ```run_BUSCO.py -m genome -i scaffolds-break.fasta -o Anolis_before -l tetrapoda_odb9 -c $NSLOTS```                                                                                           
@@ -558,7 +560,7 @@ BUSCO was run in mode: genome
 
 
  	+ **module**: ```source /home/ariasc/.bashrc ```
- 					 ```conda activate minimap2````
+ 		 ```conda activate minimap2````
 
  	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
   		
@@ -952,7 +954,7 @@ RESULTS:
 - module load bioinformatics/assembly_stats											
 
  
- # NEXT STEPS 
+#### NEXT STEPS 
                                                                                                                          
 *  salsa before the annotation: https://github.com/marbl/SALSA
 	
