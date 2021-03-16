@@ -372,7 +372,8 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 
 --> 1 job: anolis_minimap_racon.job 
 	First map your clean_raw reads to your assembly with minimap.
-	+ **module**: ```source /home/ariasc/.bashrc```
+	
++ **module**: ```source /home/ariasc/.bashrc```
 		       ```conda activate minimap2```			  
 	+ **command**: ```minimap2 -ax map-ont -t40 /scratch/genomics/charleskl/Racon/Anolis_20k_scaf1.fa /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq > anolis_mapped_data.sam```
 
@@ -556,7 +557,7 @@ BUSCO was run in mode: genome
 	- second, map reads to draft genome with minimap2
 
 
- 	+ **module**:** ```source /home/ariasc/.bashrc ```
+ 	+ **module**: ```source /home/ariasc/.bashrc ```
  					 ```conda activate minimap2````
 
  	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
@@ -566,7 +567,7 @@ BUSCO was run in mode: genome
 	run racon with the *.sam file and corrected names short reads files
 
   
- 	+ **module**:** ```source ~/.bashrc ``` 
+ 	+ **module**: ```source ~/.bashrc ``` 
  	          ```conda activate racon```               
 
  	+ **command**: ```racon -t 30 rename_x_racon.fastq Anolis_notC_scaff.sam scaffolds-break.fasta > Anolis_racon_short.fasta```
@@ -612,7 +613,7 @@ User Time = 20:49:10
 } } 
 
 
-# DAY 7: BUSCO 3 from short reads AFTER Polishing
+# DAY 9: BUSCO 3 from short reads AFTER Polishing
 														
 	
 * RUNNER: Renata (piranir)
@@ -638,7 +639,7 @@ User Time = 20:49:10
 	- or you can use wget "website link"
 
 
-	+ **module**:** ```module load bioinformatics/busco/3.0.2```
+	+ **module**: ```module load bioinformatics/busco/3.0.2```
                                                                                                        
   	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                          
 			```run_BUSCO.py -m genome -i Anolis_racon_short.fasta -o Anolis_after -l tetrapoda_odb9 -c $NSLOTS ```
@@ -667,9 +668,8 @@ NEXT STEPS:
 * FILE: Anolis_racon_short.fasta
 												
 
-
 												
-# DAY 9: Minimap2/Racon to improve the BUSCO RESULTS
+# DAY 10: Minimap2/Racon to improve the BUSCO RESULTS
 														
 														
 * RUNNER: Renata (piranir)
@@ -734,7 +734,7 @@ NEXT STEPS:
 	
 
 												
-# DAY 10: BUSCO 3 AFTER2
+# DAY 11: BUSCO 3 AFTER2
 														
 	
 * RUNNER: Renata (piranir)
@@ -765,7 +765,7 @@ C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950
 														
 
 															
-# DAY 11: PILON
+# DAY 12: PILON
 															
 * RUNNER: Carlos (ariasc)
 * FUNCTION: Automatically improve draft assemblies
@@ -830,9 +830,9 @@ Assembly stats before kraken
 }	
 	
 															
-# DAY 12: KRAKEN2 / CONTAMINATION
+# DAY 13: KRAKEN2 / CONTAMINATION
 
-* Runner: Renata
+* Runner: Renata / Carlos
 * Look for contaminations : Kraken2 program. 	
 * WEBSITE: https://github.com/SmithsonianWorkshops/2020_4_20_STRI_genomics/blob/master/day4-genome_annotation_part1/Additional_Notes01.md
 		 Check also: https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown
@@ -922,7 +922,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 
 
-# DAY 13: BUSCO AFTER KRAKEN2
+# DAY 14: BUSCO AFTER KRAKEN2
 
 * Runner: piranir
 * Folder: /scratch/genomics/piranir/Kraken2/
@@ -931,7 +931,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
  	+ **module**: ```module load bioinformatics/busco/3.0.2 ```
 
  	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
-						```run_BUSCO.py -m genome -i anolis_d1_r4_not_cont.fa -o Anolis_afterK -l tetrapoda_odb9 -c $NSLOTS ```                                                                                               
+			```run_BUSCO.py -m genome -i anolis_d1_r4_not_cont.fa -o Anolis_afterK -l tetrapoda_odb9 -c $NSLOTS ```                                                                                               
                                                                                           
 
 
@@ -957,7 +957,7 @@ RESULTS:
 *  salsa before the annotation: https://github.com/marbl/SALSA
 	
 
-# DAY 14: ANNOTATION 01
+# DAY 15: ANNOTATION 01
 	
 repeatmasker (start annotation) -species (use something close to your orgAnism)
 	
