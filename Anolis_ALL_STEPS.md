@@ -10,11 +10,11 @@
 * JOB FILE: /scratch/genomics/piranir/Cutadapt/cutadapt_26.job
 		   /scratch/genomics/charleskl/CutAdapt
 
-		+ **module**: ```module load bioinformatics/cutadapt/2.4```
+	+ **module**: ```module load bioinformatics/cutadapt/2.4```
 		
-		+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
+	+ **command**: ```cutadapt -u 26 -o E28_26t_val_1.fq.gz/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 		
-		+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
+	+ **command**: ```cutadapt -u 26 -o E28_10t_R2_001_val_2.fq.gz/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz```	
 
 
 RESULTS
