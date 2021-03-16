@@ -572,7 +572,7 @@ BUSCO was run in mode: genome
 
   
  	+ **module**: ```source ~/.bashrc ``` 
- 	          ```conda activate racon```               
+ 	+ **module**: ```conda activate racon```               
 
  	+ **command**: ```racon -t 30 rename_x_racon.fastq Anolis_notC_scaff.sam scaffolds-break.fasta > Anolis_racon_short.fasta```
 
