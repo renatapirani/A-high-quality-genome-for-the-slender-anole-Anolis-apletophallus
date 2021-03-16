@@ -518,8 +518,8 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 
   + **module**: ```module load bioinformatics/busco/3.0.2```	
   		
- 	+ **command**: ````export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                        
-				       ```run_BUSCO.py -m genome -i scaffolds-break.fasta -o Anolis_before -l tetrapoda_odb9 -c $NSLOTS```                                                                                           
+ + **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                        
+		 ```run_BUSCO.py -m genome -i scaffolds-break.fasta -o Anolis_before -l tetrapoda_odb9 -c $NSLOTS```
 
 
 #### RESULTS:
@@ -553,9 +553,11 @@ BUSCO was run in mode: genome
 	- for questions go to /scratch/stri_ap/ariasc_data/anolis_10x and the files are there.
 	- for the python file use the path /scratch/genomics/ariasc/Efish/
 	- copy those files to your folder and unzip them using - gunzip *.gz 
-   	+ **command**: ```python fix_reads_racon.py E28_10t_R2_001_val_2.fq E28_26t_R1_001_val_1.fq > rename_x_racon.fastq```
 
-	
+
+ 	+ **command**: ```python fix_reads_racon.py E28_10t_R2_001_val_2.fq E28_26t_R1_001_val_1.fq > rename_x_racon.fastq```
+
+
 	- second, map reads to draft genome with minimap2
 
 
