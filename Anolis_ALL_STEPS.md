@@ -780,7 +780,7 @@ C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950
 * JOB FILE: /scratch/genomics/ariasc/anolis/anolis_d1.fasta
 														
 
-	+ **module**:** ```module load bioinformatics/pilon/1.23```
+	+ **module**: ```module load bioinformatics/pilon/1.23```
 		
    + **command**: ```PILON_HEAP_SIZE=1000g```                                                                                                           
 		```runpilon --genome /scratch/genomics/ariasc/anolis/Anolis_racon_short.fasta --bam /scratch/genomics/ariasc/anolis/Anolis_racon_short_sorted.bam ```
