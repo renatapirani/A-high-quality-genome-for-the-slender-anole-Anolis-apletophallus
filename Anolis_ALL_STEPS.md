@@ -842,7 +842,7 @@ Assembly stats before kraken
 		 Check also: https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown
 	
 * Program: kraken is a taxonomic sequence classifier that assigns taxonomic labels to DNA sequences. 
-		- To check for contamination, how much of contamination we have.
+		-- To check for contamination, how much of contamination we have.
 		--confidence = allows the user to specify the threshold score in the interval [0,1]
 		
 * HELP: https://github.com/DerrickWood/kraken2/issues/399
@@ -853,7 +853,7 @@ Assembly stats before kraken
      
 	+ **module**: ```module load bioinformatics/kraken``` 
                                                                                                            
- 	+ **command**: ``` kraken2 --db /data/genomics/db/Kraken/kraken2_db/ --report kraken_report --use-names --confidence 0 --threads $NSLOTS anolis_d1.fasta``` 
+ 	+ **command**: ```kraken2 --db /data/genomics/db/Kraken/kraken2_db/ --report kraken_report --use-names --confidence 0 --threads $NSLOTS anolis_d1.fasta``` 
                                                                                                        
 
 #### RESULTS: Anolis_kraken.log                                                   
