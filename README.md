@@ -1,4 +1,4 @@
-# Genome-Anolis-apletophallus
+# Genome _Anolis apletophallus_
 
 Genome assembly Anolis apletophallus - Illumina and Nanopore seq
 
