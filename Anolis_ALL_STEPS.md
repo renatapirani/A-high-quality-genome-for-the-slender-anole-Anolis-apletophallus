@@ -522,14 +522,19 @@ BUSCO was run in mode: genome
 
 
 
+
 	- second, map reads to draft genome with minimap2
 
 
 
+
  	+ **module**: ```source /home/ariasc/.bashrc ```
-  	+ **module**: ```conda activate minimap2```
-  	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
-  		
+  	
+	+ **module**: ```conda activate minimap2```
+  	
+	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
+  	
+	
                                                                                                     
 * 2 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/racon_short.job
 	run racon with the *.sam file and corrected names short reads files
