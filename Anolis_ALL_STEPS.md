@@ -10,7 +10,7 @@
 * PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html
 
 * JOB FILE: /scratch/genomics/piranir/Cutadapt/cutadapt_26.job
-	    /scratch/genomics/charleskl/CutAdapt/cutadapt_10.job
+ 		/scratch/genomics/charleskl/CutAdapt/cutadapt_10.job
 
 	+ **module**: ```module load bioinformatics/cutadapt/2.4```
 		
