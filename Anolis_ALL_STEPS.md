@@ -37,8 +37,7 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
 		  Genomescope can be used to estimate genome size from short read data
 * PROGRAM WEBSITE: http://qb.cshl.edu/genomescope/
 
-* JOB FILE: /scratch/genomics/piranir/Jellyfish/jellyfish.job 
-	    /scratch/genomics/charleskl/jellyfish/jellyfish3.job
+* JOB FILE: /scratch/genomics/charleskl/jellyfish/jellyfish3.job
 		  
 	+ **module**: ```module load bioinformatics/jellyfish/2.3.0```  
 		                                                                                                                                    
