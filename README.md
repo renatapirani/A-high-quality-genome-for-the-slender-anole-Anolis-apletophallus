@@ -1,6 +1,6 @@
 # New high-quality genome assembly of the slender anole (Anolis apletophallus)
 
-Here are the programs and commands used for the Genome Assembly of Anolis apletophallus using 10X Illumina and Nanopore data
+Here we include the programs and commands used for the Genome Assembly of Anolis apletophallus using 10X Illumina and Nanopore data
 
 Developed by Dr. Renata Pirani and Dr. Carlos Arias
 
