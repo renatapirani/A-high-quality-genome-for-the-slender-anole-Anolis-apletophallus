@@ -517,6 +517,7 @@ BUSCO was run in mode: genome
 	- copy those files to your folder and unzip them using - gunzip *.gz 
 
 
+
  	+ **command**: ```python fix_reads_racon.py E28_10t_R2_001_val_2.fq E28_26t_R1_001_val_1.fq > rename_x_racon.fastq```
 
 
@@ -524,9 +525,10 @@ BUSCO was run in mode: genome
 
 
  	+ **module**: ```source /home/ariasc/.bashrc ```
- 		 ```conda activate minimap2````
+  	+ **module**: ```conda activate minimap2````
 
- 	+ **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
+
+ + **command**: ```minimap2 -ax sr -t $NSLOTS /scratch/genomics/piranir/Racon_shortreads/scaffolds-break.fasta rename_x_racon.fastq > Anolis_notC_scaff.sam```
   		
                                                                                                     
 * 2 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/racon_short.job
