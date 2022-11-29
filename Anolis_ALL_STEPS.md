@@ -503,7 +503,6 @@ BUSCO was run in mode: genome
 # DAY 8: Minimap2/Racon short reads
 														
 														
-* RUNNER: Renata (piranir)
 * FUNCTION: polishing with racon Illumina short reads
  	  
 * PROGRAM WEBSITE: https://github.com/isovic/racon
