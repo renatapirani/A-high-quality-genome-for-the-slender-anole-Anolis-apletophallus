@@ -731,8 +731,6 @@ C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950
 * FUNCTION: Automatically improve draft assemblies
 		   
 		 
-* PROGRAM WEBSITE: 
-
 * JOB FILE: /scratch/genomics/ariasc/anolis/anolis_d1.fasta
 														
 
