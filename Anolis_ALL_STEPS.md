@@ -400,7 +400,7 @@ P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this dat
 } 
 
 
-* ERROR: we got warnings about 2 contigs that were possibly chimeric
+* ERROR: we got warnings about 2 contigs that were possibly chimeric.
 		We will run Break10x to fix the error. 
 		
 
