@@ -339,7 +339,7 @@ P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this dat
 --> 1 job: anolis_minimap_racon.job 
 	First map your clean_raw reads to your assembly with minimap.
 	
-	+ **module**: ```source /home/ariasc/.bashrc```
++ **module**: ```source /home/ariasc/.bashrc```
 		       ```conda activate minimap2```	
 		       
 	+ **command**: ```minimap2 -ax map-ont -t40 /scratch/genomics/charleskl/Racon/Anolis_20k_scaf1.fa /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq > anolis_mapped_data.sam```
