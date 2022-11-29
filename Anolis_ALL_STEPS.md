@@ -1,8 +1,8 @@
-#### New high-quality genome assembly of the slender anole (Anolis apletophallus)
+### New high-quality genome assembly of the slender anole (Anolis apletophallus)
 
-### 10x data Illumina (short reads) + Nanopore (long reads) 
+#### 10x data Illumina (short reads) + Nanopore (long reads) 
 
-### Developed by Dr. Renata Pirani and Dr. Carlos Arias (solracarias)
+#### Developed by Dr. Renata Pirani and Dr. Carlos Arias (solracarias)
  
 # DAY 1: CUTADAPT
 
