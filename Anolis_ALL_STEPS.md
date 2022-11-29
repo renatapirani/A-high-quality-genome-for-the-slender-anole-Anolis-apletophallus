@@ -352,8 +352,7 @@ P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this dat
 	+ **module**: ```source /home/ariasc/.bashrc```
 					  ```conda activate racon```
 					  
-	+ **command**: ```acon -u -t 30 /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq anolis_mapped_data.sam /scratch/genomics/charl```
-					   ```eskl/Racon/Anolis_20k_scaf1.fa > anolisgenome_racon_polished.fasta````
+	+ **command**: ```racon -u -t 30 /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filterd.fastq anolis_mapped_data.sam /scratch/genomics/charleskl/Racon/Anolis_20k_scaf1.fa > anolisgenome_racon_polished.fasta````
 
 
 #### RESULTS: 
