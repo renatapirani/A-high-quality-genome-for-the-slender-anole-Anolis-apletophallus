@@ -1,6 +1,6 @@
 # New Genome _Anolis apletophallus_
 
-Here is the programs and command lines used for the Genome assembly of Anolis apletophallus using 10X Illumina and Nanopore data
+Here are the programs and commands used for the Genome Assembly of Anolis apletophallus using 10X Illumina and Nanopore data
 
 Developed by Dr. Renata Pirani and Dr. Carlos Arias
 
