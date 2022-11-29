@@ -699,38 +699,10 @@ NEXT STEPS:
   }                  												
 	
 
-												
-# DAY 11: BUSCO 3 AFTER2
-														
-	
-* FUNCTION: assess the completeness of genomes, gene sets, and transcriptomes, 
-		  using their gene content as a complementary method to common technical metrics. 
-		 
-* PROGRAM WEBSITE: https://busco.ezlab.org/busco_userguide.html
-
-* 1 JOB FILE: /scratch/genomics/piranir/Busco/Anolis_after_polishing2.fasta
-* input: busco3_after2.job
-
-
- 	+ **module**: ```module load bioinformatics/busco/3.0.2```
-                                                                                                          
-
- 	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config"```                                                           
-					```run_BUSCO.py -m genome -i Anolis_after_polishing2.fasta -o Anolis_after2 -l tetrapoda_odb9 -c $NSLOTS ```
-
-													
-																												
-#### RESULTS:	
-									
-C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950                                                                                                         
-        3439    Complete and single-copy BUSCOs (S)                                                               
-        40      Complete and duplicated BUSCOs (D)                                                                                                          
-        279     Fragmented BUSCOs (F)                                                                             
-        192     Missing BUSCOs (M)											
-														
+		
 
 															
-# DAY 12: PILON
+# DAY 11: PILON
 															
 * FUNCTION: Automatically improve draft assemblies
 		   
@@ -792,7 +764,7 @@ Assembly stats before kraken
 }	
 	
 															
-# DAY 13: KRAKEN2 / CONTAMINATION
+# DAY 12: KRAKEN2 / CONTAMINATION
 
 * Look for contaminations : Kraken2 program. 	
 * WEBSITE: https://github.com/SmithsonianWorkshops/2020_4_20_STRI_genomics/blob/master/day4-genome_annotation_part1/Additional_Notes01.md
@@ -883,7 +855,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 
 
-# DAY 14: BUSCO AFTER KRAKEN2
+# DAY 13: BUSCO AFTER KRAKEN2
 
 * Folder: /scratch/genomics/piranir/Kraken2/
 * 2 JOB: busco3_afterKraken.job
@@ -905,11 +877,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
         274     Fragmented BUSCOs (F)                                                                                                                 
         3950    Total BUSCO groups searched 
 
-
-RESULTS: 
-
-- Check your assembly with assembly-stats
-- module load bioinformatics/assembly_stats											
+										
 
  
 													
