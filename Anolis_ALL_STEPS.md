@@ -510,7 +510,6 @@ BUSCO was run in mode: genome
 
 * 1 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/minimap.job			
 
-* FIRST: 
 	- rename reads 1 a 2 to used them with racon.
 	- for questions go to /scratch/stri_ap/ariasc_data/anolis_10x and the files are there.
 	- for the python file use the path /scratch/genomics/ariasc/Efish/
