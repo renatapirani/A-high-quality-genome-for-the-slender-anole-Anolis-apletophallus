@@ -2,16 +2,15 @@
 
 #### 10x data Illumina (short reads) + Nanopore (long reads) 
 
-#### Developed by Dr. Renata Pirani and Dr. Carlos Arias (solracarias)
+#### Developed by Dr. Renata Pirani (renatapirani) and Dr. Carlos Arias (solracarias)
  
 # DAY 1: CUTADAPT
 
-* RUNNER: Renata (pirani) + Kristin (charleskl)
 * FUNCTION: we are cleaning the DNA  (short reads) cutting the bad sequencing and checking for any contamination
 * PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html
 
 * JOB FILE: /scratch/genomics/piranir/Cutadapt/cutadapt_26.job
-		   /scratch/genomics/charleskl/CutAdapt
+	    /scratch/genomics/charleskl/CutAdapt/cutadapt_10.job
 
 	+ **module**: ```module load bioinformatics/cutadapt/2.4```
 		
@@ -34,26 +33,17 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
  											
 # DAY 2: Jellyfish
  											
-
-* RUNNER: Renata (piranir) + Kristin (charleskl)
 * FUNCTION: Run Genomescope, first you need to generate a Jellyfish histogram
 		  Genomescope can be used to estimate genome size from short read data
 * PROGRAM WEBSITE: http://qb.cshl.edu/genomescope/
 
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/jellyfish.job 
-		  /scratch/genomics/charleskl/jellyfish/jellyfish3.job
+	    /scratch/genomics/charleskl/jellyfish/jellyfish3.job
 		  
 	+ **module**: ```module load bioinformatics/jellyfish/2.3.0```  
 		                                                                                                                                    
 	+ **command**: ```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz | jellyfish count -C -m 21 -s 800000000 -t $NSLOTS -o reads.jf /dev/fd/0```  
 
-
-ERROR: changed the permits / typing "chmod 777" , 
-also those files are zip files. So now I need to unzip first and than to run the jellyfish code. 
- 
-```gzip -dc E28_26t_val_1.fq.gz E28_10t_R2_001_val_2.fq.gz``` = is to unzip the files. 
- 
-TIME: 10h to complete
 
 
 * JOB FILE: /scratch/genomics/piranir/Jellyfish/hist_jellyfish.job
@@ -63,42 +53,21 @@ TIME: 10h to complete
 	+ **command**: ```jellyfish histo -t 20 reads_EF_illumina.jf > reads_EF_ill.histo``` 
 
 
-TIME: 6 min to complete
- 
-NEXT STEPS: download from the hydra to your computer do:
-- qrsh in your folder
-- now navegate to the folder where the file is from here.
-- type: module load bioinformatics/ffsend
-- type: ffsend upload reads.histo and go to the website
-- go to the genome website and upload your file (reads.histo)
 
+NEXT STEPS: download the files from the hydra to your computer:
+- go to the genome website and upload your file (reads.histo)
 
 
 # DAY 3: Wtdbg2/Redbeans
 
 
-* RUNNER: Renata (piranir) + Kristin (charleskl)
 * FUNCTION: Wtdbg2 is a sequence assembler for long noisy reads produced by either PacBio or Oxford Nanopore Technologies.
 		 The program uses two steps. The first step is the assembler and the second step is the consenser. 
 * PROGRAM WEBSITE: https://github.com/ruanjue/wtdbg2/blob/master/README-ori.md
 														
 * 1 JOB FILE: /scratch/genomics/piranir/Wtdbg2/readbeans.job
-		  /scratch/genomics/charleskl/redbean
-
 	- To check the parameters go to "wtdbg2 --help" 
-	- Renata runs with the flag -A -S 1 
-	- Kristin runs with the flag -A -S 2  
-
-	+ **module**: ```module load bioinformatics/wtdbg2```
-		
-	+ **command**: ```wtdbg2 -g 1.8g -t $NSLOTS -p 19 -A -S 1 -k 0 -s 0.05 -edge-min 2 --rescue-low-cov-edges -L 1000 ```
- 					   ```-i /scratch/stri_ap/ariasc_data/anolis_nanopore/anolis_28_filt.fa.gz -fo anolis_28_S1_assemble_wt ```                                                                                                                                              
-                                                                                                                   
-                                                                                                                                                                      
-
-* 2 JOB FILE: /scratch/genomics/charleskl/redbean/readbeans_2con.job
-		  (only Kristin run it, better results than Renata on the previous job)
-  
+ 
 
 	+ **module**: ```module load bioinformatics/wtdbg2```
 		
@@ -106,8 +75,7 @@ NEXT STEPS: download from the hydra to your computer do:
 		
 			
 	P.S. to check queues = Go to confluence.si.edu and to "Submitting Jobs" and "available queues". 
-	P.S. Renata jobs didn't run because of memory. We will use the assembly of Kristin 
-
+	
 	END: to check how is your assembly data type: 
 	module load bioinformatics/assembly_stats
 	assembly_stats anolis_S2_genomedraft_raw.fa
@@ -155,9 +123,9 @@ assembly_stats anolis_S2_genomedraft_raw.fa
 # DAY 4: Minimap/bwa
 
 
-* RUNNER: Kristin (charleskl)
 * FUNCTION: Polish the Genome 
 		  - minimap2:  is a versatile sequence alignment program that alings DNA or mRNA sequences against a large reference database. 
+
 * PROGRAM WEBSITE: https://github.com/lh3/minimap2
 				 https://github.com/isovic/racon
 				 http://www.htslib.org/doc/samtools-view.html
@@ -200,8 +168,8 @@ P.S. wait for the results of the Job 1 to start the job 2.
 
 
 * SHORT READS
-		-Now for short reads, you can used bwa to map your short reads to your draft genome, after 
-	  		that you will sort the mapped file and finanlly run the concesus command.
+		- Now for short reads, you can used bwa to map your short reads to your draft genome, after 
+	  		that you will sort the mapped file and finally run the concesus command.
 		- We are going to use the BWA program. BWA is a software package for mapping DNA sequences against a large reference genome.
 		- BWA first needs to construct the FM-index for the reference genome (the index command)
 
@@ -270,7 +238,6 @@ assembly_stats anolis_dbg.srp.fa
 # DAY 5: Scaff10x					
 											
 
-* RUNNER: Renata (piranir) + Kristin (charleskl)
 * FUNCTION: Pipeline for scaffolding and breaking a genome assembly using 10x genomics linked-reads
 		  make sure that the version is gcc CC= /software/gcc-4.9.2/bin/gcc in the makefile 
 
@@ -288,8 +255,8 @@ assembly_stats anolis_dbg.srp.fa
 q1=/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R1_001_val_1.fq.gz                          
 q2=/scratch/stri_ap/ariasc_data/anolis_10x/E28_MPS12345004_G06_9489_S3_L004_R2_001_val_2.fq.gz
 
-P.S. Kristin will run with -block 100000 (best results)
-	 Renata will run with -block 15000
+P.S. Best results -block 100000 
+
 
 
 * 1 JOB: /scratch/genomics/piranir/Scaff10/scaff10xAnolis.job
@@ -349,18 +316,15 @@ P.S. Kristin will run with -block 100000 (best results)
 }                           
 
 
-P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use her data to polish.
-	- Renata :  N50 = 974899 (file Anolis_dbg8_RMP_scaf1.fa)
+P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this data to polish.
 	AFTER: polish with Racun for long read data, we use minimap
 
-- Python no adapters and no barcodes - short read - map with 	
 
 
 
 # DAY 6: minimap2/racon long reads
 
 
-* RUNNER: Kristin (charleskl)
 * FUNCTION: Polish the Genome 
 		  minimap2: is a versatile sequence alignment program that alings DNA or mRNA sequences against a large reference database. 
 		  Polishing with Racon -- Type of data: Nanopore or Pacbio
@@ -369,7 +333,7 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 				
 * JOB FILE: /scratch/genomics/charleskl/Racon/Anolis_20k_scaf1.fa
 
-	P.S. Kristin data was the best output so we are going to use this file: Anolis_20k_scaf1.fa
+	P.S. file used: Anolis_20k_scaf1.fa
 
 
 
@@ -437,15 +401,14 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 } 
 
 
-* ERROR: Kristin got warnings about 2 contigs that were possibly chimeric
+* ERROR: we got warnings about 2 contigs that were possibly chimeric
 		We will run Break10x to fix the error. 
 		
 
 #### Break10x 
 
 * 3 job: /scratch/genomics/piranir/Scaff10/break10xAnolis.job
-	User Time = 10:02:18:44
-
+	
 	+ **command**: ```/home/ariasc/programs/Scaff10X/src/./break10x -nodes 30 -score 10 -gap 100 -data input2.dat ```
 					```anolisgenome_racon_polished.fasta scaffolds-break.fasta scaffolds-break.name```                                                                              
                                                                          
@@ -500,7 +463,6 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 # DAY 7: BUSCO3 from short reads before Polishing
 
 
-* RUNNER: Carlos (ariasc) + Renata (piranir)
 * FUNCTION: assess the completeness of genomes, gene sets, and transcriptomes, 
 		  using their gene content as a complementary method to common technical metrics. 
 		 
@@ -526,7 +488,6 @@ P.S. - Kristin also run got a better N50 = 997812 (file: Anolis_20k_scaf1.fa), s
 
 
 #### RESULTS:
-User Time = 4:16:06:52
 Summarized benchmarking in BUSCO notation for file scaffolds-break.fasta                                                                    
 BUSCO was run in mode: genome                                                                                                               
                                                                                                                                               
@@ -582,7 +543,6 @@ BUSCO was run in mode: genome
                                                                                                                     
                                                                                                               
 #### RESULTS: 
-User Time = 20:49:10
 - Check your assembly with assembly-stats
 - module load bioinformatics/assembly_stats
 
@@ -622,8 +582,6 @@ User Time = 20:49:10
 
 # DAY 9: BUSCO 3 from short reads AFTER Polishing
 														
-	
-* RUNNER: Renata (piranir)
 * FUNCTION: assess the completeness of genomes, gene sets, and transcriptomes, 
 		  using their gene content as a complementary method to common technical metrics. 
 		 
@@ -653,7 +611,6 @@ User Time = 20:49:10
                                                                                                          					
 														
 #### RESULTS:
-User Time = 5:12:39:42	
 
 BUSCO was run in mode: genome                                                                                                               
                                                                                                                                               
@@ -667,9 +624,9 @@ BUSCO was run in mode: genome
 														
 		
 NEXT STEPS:
-	- After talking to Carlos, we decided to run polishing again for the Anolis_racon_short.fasta file		
-	- So Carlos will run pilon and Renata the minimap and Racon again 
-	- Kristin will download the old Anolis genome and compare to our results. 
+	- We decided to run polishing again for the Anolis_racon_short.fasta file		
+	- We will run pilon, minimap and Racon again 
+	- After download Anolis carolinensis and A. sagrei genomes and compare to our results. 
 
 
 * FILE: Anolis_racon_short.fasta
@@ -679,8 +636,6 @@ NEXT STEPS:
 # DAY 10: Minimap2/Racon to improve the BUSCO RESULTS
 														
 														
-* RUNNER: Renata (piranir)
-
 * 1 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/minimap2.job			
 
 * FILE: Anolis_racon_short.fasta
@@ -744,7 +699,6 @@ NEXT STEPS:
 # DAY 11: BUSCO 3 AFTER2
 														
 	
-* RUNNER: Renata (piranir)
 * FUNCTION: assess the completeness of genomes, gene sets, and transcriptomes, 
 		  using their gene content as a complementary method to common technical metrics. 
 		 
@@ -774,7 +728,6 @@ C:88.1%[S:87.1%,D:1.0%],F:7.1%,M:4.8%,n:3950
 															
 # DAY 12: PILON
 															
-* RUNNER: Carlos (ariasc)
 * FUNCTION: Automatically improve draft assemblies
 		   
 		 
@@ -839,7 +792,6 @@ Assembly stats before kraken
 															
 # DAY 13: KRAKEN2 / CONTAMINATION
 
-* Runner: Renata / Carlos
 * Look for contaminations : Kraken2 program. 	
 * WEBSITE: https://github.com/SmithsonianWorkshops/2020_4_20_STRI_genomics/blob/master/day4-genome_annotation_part1/Additional_Notes01.md
 		 Check also: https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown
@@ -931,7 +883,6 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 # DAY 14: BUSCO AFTER KRAKEN2
 
-* Runner: piranir
 * Folder: /scratch/genomics/piranir/Kraken2/
 * 2 JOB: busco3_afterKraken.job
 
@@ -944,7 +895,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 --------------------------------
 
-#### BUSCO RESULTS: 
+#### FINAL BUSCO RESULTS: 
  C:88.3%[S:87.3%,D:1.0%],F:6.9%,M:4.8%,n:3950                                                                                                  
         3487    Complete BUSCOs (C)                                                                                                                   
         3448    Complete and single-copy BUSCOs (S)                                                                                                                                                                                                                                                 
@@ -959,17 +910,4 @@ RESULTS:
 - module load bioinformatics/assembly_stats											
 
  
-#### NEXT STEPS 
-                                                                                                                         
-*  salsa before the annotation: https://github.com/marbl/SALSA
-	
-
-# DAY 15: ANNOTATION 01
-	
-repeatmasker (start annotation) -species (use something close to your orgAnism)
-	
-AFTER USE BLAT WITH THE TRANSCRIPTOME
-	
-
-	
 													
