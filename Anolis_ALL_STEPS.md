@@ -919,8 +919,8 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 # DAY 15: Annotation Genome													
 
 - 	The genome was annotated by Dovetail Genomics.
--	All the annotation information are described at the Methods section.
--	File: annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output. 
+-	All the annotation information is described at the Methods section.
+-	Annotation File: annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output. 
 
 
 
