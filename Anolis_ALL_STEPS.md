@@ -886,9 +886,8 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 -	All the steps used for Dovetail to assembly the genome are described at the methods section of the manuscript.
 
 
-* Runner: piranir
 * Folder: /scratch/genomics/piranir/Kraken2/
-* 2 JOB: busco3_afterKraken.job
+* JOB: busco3_afterKraken.job
 
 	+ **module**: ```module load bioinformatics/busco/3.0.2 ```
 
