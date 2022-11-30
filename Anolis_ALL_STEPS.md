@@ -883,10 +883,11 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
  
 
-# DAY 14: Hi-C technologies/Dovetails files 
+# DAY 14: Hi-C technology/Dovetail files 
 
 - 	The final fasta file (anolis_d1_r4_not_cont.fa) was sent to Dovetail company for the Hi-C assemble. 
 -	All the steps used for Dovetail to assembly the genome are described at the methods section of the manuscript.
+-	Final file from Dovetail: annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output.fasta
 
 
 * Folder: /scratch/genomics/piranir/Kraken2/
@@ -917,9 +918,9 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 # DAY 15: Annotation Genome													
 
-- 	The genome was annotated by Dovetail Genomics
--	All the annotation information are described at the Methods section
--	File: annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output 
+- 	The genome was annotated by Dovetail Genomics.
+-	All the annotation information are described at the Methods section.
+-	File: annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output. 
 
 
 
