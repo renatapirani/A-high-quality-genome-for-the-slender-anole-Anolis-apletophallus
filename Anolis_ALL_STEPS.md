@@ -869,7 +869,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 --------------------------------
 
-#### FINAL BUSCO RESULTS: 
+#### BUSCO RESULTS: 
  C:88.3%[S:87.3%,D:1.0%],F:6.9%,M:4.8%,n:3950                                                                                                  
         3487    Complete BUSCOs (C)                                                                                                                   
         3448    Complete and single-copy BUSCOs (S)                                                                                                                                                                                                                                                 
@@ -880,4 +880,34 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 										
 
  
-													
+# DAY 14: Hi-C technologies/Dovetails files 
+
+- 	The final fasta file (anolis_d1_r4_not_cont.fa) was sent to Dovetail company for the Hi-C assemble. 
+-	All the steps used for Dovetail to assembly the genome are described at the methods section of the manuscript.
+
+
+* Runner: piranir
+* Folder: /scratch/genomics/piranir/Kraken2/
+* 2 JOB: busco3_afterKraken.job
+
+		+ **module**: ```module load bioinformatics/busco/3.0.2 ```
+
+   		+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
+						```run_BUSCO.py -m genome -i annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output.fasta -o Anolis_final -l tetrapoda_odb10 -c $NSLOTS ```                                                                                               
+                                                                                          
+
+
+--------------------------------
+
+#### BUSCO RESULTS: 
+  C:90.5%[S:89.7%,D:0.8%],F:2.7%,M:6.8%,n:5310                                                                                                          
+        4807    Complete BUSCOs (C)                                                                                              
+        4762    Complete and single-copy BUSCOs (S)                                              
+        45      Complete and duplicated BUSCOs (D)                                                       
+        142     Fragmented BUSCOs (F)                                                                                             
+        361     Missing BUSCOs (M)(F)
+        5310    Total BUSCO groups searched
+	
+	
+	
+# DAY 16: Annotation Genome													
