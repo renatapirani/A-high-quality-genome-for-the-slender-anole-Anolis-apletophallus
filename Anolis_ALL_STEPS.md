@@ -855,6 +855,8 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 
 
+
+
 # DAY 13: BUSCO AFTER KRAKEN2
 
 * Folder: /scratch/genomics/piranir/Kraken2/
@@ -880,6 +882,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 										
 
  
+
 # DAY 14: Hi-C technologies/Dovetails files 
 
 - 	The final fasta file (anolis_d1_r4_not_cont.fa) was sent to Dovetail company for the Hi-C assemble. 
@@ -909,7 +912,10 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 	
 	
 	
-# DAY 16: Annotation Genome													
+
+
+
+# DAY 15: Annotation Genome													
 
 - 	The genome was annotated by Dovetail Genomics
 -	All the annotation information are described at the Methods section
