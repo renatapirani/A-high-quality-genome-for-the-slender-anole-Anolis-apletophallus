@@ -857,7 +857,9 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 
 
-# DAY 13: BUSCO AFTER KRAKEN2
+# DAY 13: BUSCO
+
+-	Run BUSCO after Kraken2
 
 * Folder: /scratch/genomics/piranir/Kraken2/
 * 2 JOB: busco3_afterKraken.job
@@ -874,7 +876,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 #### BUSCO RESULTS: 
  C:88.3%[S:87.3%,D:1.0%],F:6.9%,M:4.8%,n:3950                                                                                                  
         3487    Complete BUSCOs (C)                                                                                                                   
-        3448    Complete and single-copy BUSCOs (S)                                                                                                                                                                                                                                                 
+        3448    Complete and single-copy BUSCOs (S)                                       
         39      Complete and duplicated BUSCOs (D)                                                                                                    
         274     Fragmented BUSCOs (F)                                                                                                                 
         3950    Total BUSCO groups searched 
@@ -888,6 +890,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 - 	The final fasta file (anolis_d1_r4_not_cont.fa) was sent to Dovetail company for the Hi-C assemble. 
 -	All the steps used for Dovetail to assembly the genome are described at the methods section of the manuscript.
 -	Final file from Dovetail: annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output.fasta
+-	Run BUSCO for the final genome file.
 
 
 * Folder: /scratch/genomics/piranir/Kraken2/
@@ -902,7 +905,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 --------------------------------
 
-#### BUSCO RESULTS: 
+#### FINAL BUSCO RESULTS: 
   C:90.5%[S:89.7%,D:0.8%],F:2.7%,M:6.8%,n:5310                                                                                                          
         4807    Complete BUSCOs (C)                                                                                              
         4762    Complete and single-copy BUSCOs (S)                                              
