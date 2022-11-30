@@ -890,9 +890,9 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 * Folder: /scratch/genomics/piranir/Kraken2/
 * 2 JOB: busco3_afterKraken.job
 
-		+ **module**: ```module load bioinformatics/busco/3.0.2 ```
+	+ **module**: ```module load bioinformatics/busco/3.0.2 ```
 
-   		+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
+   + **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
 						```run_BUSCO.py -m genome -i annotation_shaune-smi2505-mb-hirise-gd6od__06-26-2021__hic_output.fasta -o Anolis_final -l tetrapoda_odb10 -c $NSLOTS ```                                                                                               
                                                                                           
 
