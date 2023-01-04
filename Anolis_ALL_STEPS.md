@@ -466,7 +466,7 @@ P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this dat
 		 
 * PROGRAM WEBSITE: https://busco.ezlab.org/busco_userguide.html
 
-* JOB FILE: /scratch/genomics/piranir/Busco/ busco_before.job
+* JOB FILE: /scratch/genomics/piranir/Busco/busco_before.job
 
 * BEFORE RUNNING: 
 	- Running last version of Busco that I have installed
