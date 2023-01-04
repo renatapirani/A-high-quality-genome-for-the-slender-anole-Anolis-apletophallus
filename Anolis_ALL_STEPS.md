@@ -176,8 +176,7 @@ P.S. wait for the results of the Job 1 to start the job 2.
 * 4 JOB: polish_anolis_small.job
 * bwa polishing with wtpoa-cns module from redbean
 
-	+ **module**: ```module load bioinformatics/bwa/0.7.17```
- 					 ``` module load bioinformatics/bwa/0.7.17``` 
+	+ **module**: ```module load bioinformatics/bwa/0.7.17``` 
  					                                                                                                                        
  	+ **command**: ```bwa mem -t 40 /scratch/genomics/charleskl/jobs/Anolis_dbg_cns.fa /scratch/genomics/charleskl/E28_26t_val_1.fq.gz /scratch/genomics```
 					 ```/charleskl/E28_10t_R2_001_val_2.fq.gz | samtools sort -O SAM | /home/ariasc/programs/wtdbg2/./wtpoa-cns -t 40 -x sam-sr -d /scratc```
