@@ -1,4 +1,4 @@
-### New high-quality genome assembly of the slender anole (Anolis apletophallus)
+### A high-quality genome for the slender anole (Anolis apletophallus), an emerging model for field-studies of tropical ecology and evolution
 
 #### 10x data Illumina (short reads) + Nanopore (long reads) 
 
