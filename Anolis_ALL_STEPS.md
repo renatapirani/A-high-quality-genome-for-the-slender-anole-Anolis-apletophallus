@@ -636,7 +636,7 @@ NEXT STEPS:
 												
 
 												
-# DAY 10: Minimap2/Racon to improve the BUSCO RESULTS
+# DAY 10: Minimap2/Racon to improve BUSCO RESULTS
 														
 														
 * 1 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/minimap2.job			
