@@ -4,7 +4,7 @@
 
 #### Developed by Dr. Renata Pirani (renatapirani) and Dr. Carlos Arias (solracarias)
  
-# DAY 1: CUTADAPT
+# 1.CUTADAPT
 
 * FUNCTION: we are cleaning the DNA  (short reads) cutting the bad sequencing and checking for any contamination
 * PROGRAM WEBSITE: https://cutadapt.readthedocs.io/en/stable/guide.html
@@ -31,7 +31,7 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
  											
  											
  											
-# DAY 2: Jellyfish
+# 2.Jellyfish
  											
 * FUNCTION: Run Genomescope, first you need to generate a Jellyfish histogram
 		  Genomescope can be used to estimate genome size from short read data
@@ -57,7 +57,7 @@ NEXT STEPS: download the files from the hydra to your computer:
 - go to the genome website and upload your file (reads.histo)
 
 
-# DAY 3: Wtdbg2/Redbeans
+# 3.Wtdbg2/Redbeans
 
 
 * FUNCTION: Wtdbg2 is a sequence assembler for long noisy reads produced by either PacBio or Oxford Nanopore Technologies.
@@ -119,7 +119,7 @@ assembly_stats anolis_S2_genomedraft_raw.fa
 
 
 										
-# DAY 4: Minimap/bwa
+# 4.Minimap/bwa
 
 
 * FUNCTION: Polish the Genome 
@@ -233,7 +233,7 @@ assembly_stats anolis_dbg.srp.fa
 } 
 
 							
-# DAY 5: Scaff10x					
+# 5.Scaff10x					
 											
 
 * FUNCTION: Pipeline for scaffolding and breaking a genome assembly using 10x genomics linked-reads
@@ -320,7 +320,7 @@ P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this dat
 
 
 
-# DAY 6: minimap2/racon long reads
+# 6.minimap2/racon long reads
 
 
 * FUNCTION: Polish the Genome 
@@ -458,7 +458,7 @@ P.S. - Results N50 = 997812 (file: Anolis_20k_scaf1.fa), so we will use this dat
 
 
 
-# DAY 7: BUSCO3 from short reads before Polishing
+# 7.BUSCO3 from short reads before Polishing
 
 
 * FUNCTION: assess the completeness of genomes, gene sets, and transcriptomes, 
@@ -499,7 +499,7 @@ BUSCO was run in mode: genome
 
 
 
-# DAY 8: Minimap2/Racon short reads
+# 8.Minimap2/Racon short reads
 														
 														
 * FUNCTION: polishing with racon Illumina short reads
@@ -583,7 +583,7 @@ BUSCO was run in mode: genome
 } } 
 
 
-# DAY 9: BUSCO 3 from short reads AFTER Polishing
+# 9.BUSCO 3 from short reads AFTER Polishing
 														
 * FUNCTION: assess the completeness of genomes, gene sets, and transcriptomes, 
 		  using their gene content as a complementary method to common technical metrics. 
@@ -636,7 +636,7 @@ NEXT STEPS:
 												
 
 												
-# DAY 10: Minimap2/Racon to improve BUSCO RESULTS
+# 10.Minimap2/Racon to improve BUSCO RESULTS
 														
 														
 * 1 JOB FOLDER: /scratch/genomics/piranir/Racon_shortreads/minimap2.job			
@@ -701,7 +701,7 @@ NEXT STEPS:
 		
 
 															
-# DAY 11: PILON
+# 11.PILON
 															
 * FUNCTION: Automatically improve draft assemblies
 		   
@@ -763,7 +763,7 @@ Assembly stats before kraken
 }	
 	
 															
-# DAY 12: KRAKEN2 / CONTAMINATION
+# 12.KRAKEN2 / CONTAMINATION
 
 * Look for contaminations : Kraken2 program. 	
 * WEBSITE: https://github.com/SmithsonianWorkshops/2020_4_20_STRI_genomics/blob/master/day4-genome_annotation_part1/Additional_Notes01.md
@@ -856,7 +856,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 
 
-# DAY 13: BUSCO
+# 13.BUSCO
 
 -	Run BUSCO after Kraken2
 
@@ -884,7 +884,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
  
 
-# DAY 14: Hi-C technology/Dovetail files 
+# 14.Hi-C technology/Dovetail files 
 
 - 	The final fasta file (anolis_d1_r4_not_cont.fa) was sent to Dovetail company for the Hi-C assemble. 
 -	All the steps used for Dovetail to assembly the genome are described at the methods section of the manuscript.
@@ -918,7 +918,7 @@ We just remove 0.25% of the total length of the genome. This was include in 613 
 
 
 
-# DAY 15: Annotation Genome													
+# 15.Annotation Genome													
 
 - 	The genome was annotated by Dovetail Genomics.
 -	All the annotation information is described at the Methods section.
