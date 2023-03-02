@@ -1,6 +1,6 @@
-# A high-quality genome for the slender anole (Anolis apletophallus), an emerging model for field-studies of tropical ecology and evolution
+# A high-quality genome for the slender anole (_Anolis apletophallus_), an emerging model for field-studies of tropical ecology and evolution
 
-Here we include the programs and commands used for the Genome Assembly of Anolis apletophallus using 10X Illumina and Nanopore data
+Here we include the programs and commands used for the genome assembly of _Anolis apletophallus_ using Oxford Nanopore, 10X Genomics linked-reads and Dovetail Omni-C.
 
 Developed by Dr. Renata Pirani (renatapirani) and Dr. Carlos Arias (solracarias)
 
