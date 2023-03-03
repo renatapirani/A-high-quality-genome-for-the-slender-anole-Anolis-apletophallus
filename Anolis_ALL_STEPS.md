@@ -56,6 +56,8 @@ Total written (filtered):  43,579,357,893 bp (82.4%)
 NEXT STEPS: download the files from the hydra to your computer:
 - go to the genome website and upload your file (reads.histo)
 
+#### RESULTS
+Figure: GenomeScope.png
 
 # 3.Wtdbg2/Redbeans
 
