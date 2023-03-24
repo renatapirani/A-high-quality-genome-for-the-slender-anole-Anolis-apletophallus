@@ -811,7 +811,9 @@ Now you can filter those contigs
 
 
 #### RESULTS: Anolis genome after Kraken - Final
+
 {
+
   "Contig Stats": {
     "L10": 99,
     "L20": 256,
@@ -850,6 +852,7 @@ Now you can filter those contigs
     "shortest": 391,
     "total_bps": 2423005677
   }
+
 } 
 
 
