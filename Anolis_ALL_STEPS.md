@@ -810,45 +810,47 @@ Now you can filter those contigs
 	xargs samtools faidx anolis_d1.fasta  < anolis_r4_d1.list > anolis_d1_r4_not_cont.fa
 
 
-#### RESULTS: Anolis genome after Kraken
-{                                                                                                                                                
-  "Contig Stats": {                                                                                                                              
-    "L10": 96,                                                                                                                                    
-    "L20": 250,                                                                                                                                  
-    "L30": 454,                                                                                                                                   
-    "L40": 713,                                                                                                                                  
-    "L50": 1044,                                                                                                                                  
-    "N10": 1903355,                                                                                                                               
-    "N20": 1339109,                                                                                                                              
-    "N30": 1054153,                                                                                                                               
-    "N40": 827102,                                                                                                                               
-    "N50": 644108,                                                                                                                                
-    "gc_content": 43.80470629357358,                                                                                                             
-    "longest": 4512383,                                                                                                                           
-    "mean": 139597.28140848316,                                                                                                                   
-    "median": 17245.0,                                                                                                                           
-    "sequence_count": 17352,                                                                                                                      
-    "shortest": 1,                                                                                                                               
-    "total_bps": 2422292027                                                                                                                       
-  },                                                                                                                                             
-  "Scaffold Stats": {                                                                                                                             
-    "L10": 66,                                                                                                                                    
-    "L20": 170,                                                                                                                                  
-    "L30": 306,                                                                                                                                   
-    "L40": 482,                                                                                                                                  
-    "L50": 707,                                                                                                                                   
-    "N10": 2767002,                                                                                                                              
-    "N20": 2026203,                                                                                                                               
-    "N30": 1558597,                                                                                                                               
-    "N40": 1222272,                                                                                                                              
-    "N50": 948263,                                                                                                                                
-    "gc_content": 43.80470629357358,                                                                                                             
-    "longest": 7314449,                                                                                                                           
-    "mean": 150927.9801246106,                                                                                                                   
-    "median": 15611.5,                                                                                                                            
-    "sequence_count": 16050,                                                                                                                      
-    "shortest": 391,                                                                                                                             
-    "total_bps": 2422394081  
+#### RESULTS: Anolis genome after Kraken - Final
+{
+  "Contig Stats": {
+    "L10": 99,
+    "L20": 256,
+    "L30": 463,
+    "L40": 727,
+    "L50": 1063,
+    "N10": 1838396,
+    "N20": 1315012,
+    "N30": 1041080,
+    "N40": 817192,
+    "N50": 634366,
+    "gc_content": 43.804532589190735,
+    "longest": 4512383,
+    "mean": 139233.12197505316,
+    "median": 17292.0,
+    "sequence_count": 17397,
+    "shortest": 1,
+    "total_bps": 2422238623
+  },
+  "Scaffold Stats": {
+    "L10": 1,
+    "L20": 2,
+    "L30": 3,
+    "L40": 4,
+    "L50": 6,
+    "N10": 215168330,
+    "N20": 205735527,
+    "N30": 204085881,
+    "N40": 166281958,
+    "N50": 154613287,
+    "gc_content": 43.804532589190735,
+    "longest": 217456779,
+    "mean": 256538.4517734251,
+    "median": 9780.0,
+    "sequence_count": 9445,
+    "shortest": 391,
+    "total_bps": 2423005677
+  }
+} 
 
 
 RESULTS: Also here are the assembly stats before and after kraken.
