@@ -810,7 +810,80 @@ Now you can filter those contigs
 	xargs samtools faidx anolis_d1.fasta  < anolis_r4_d1.list > anolis_d1_r4_not_cont.fa
 
 
-#### RESULTS: Anolis genome after Kraken - Final
+#### RESULTS: Anolis genome after Kraken
+
+{                                                                                                                                                
+  "Contig Stats": {                                                                                                                              
+    "L10": 96,                                                                                                                                    
+    "L20": 250,                                                                                                                                  
+    "L30": 454,                                                                                                                                   
+    "L40": 713,                                                                                                                                  
+    "L50": 1044,                                                                                                                                  
+    "N10": 1903355,                                                                                                                               
+    "N20": 1339109,                                                                                                                              
+    "N30": 1054153,                                                                                                                               
+    "N40": 827102,                                                                                                                               
+    "N50": 644108,                                                                                                                                
+    "gc_content": 43.80470629357358,                                                                                                             
+    "longest": 4512383,                                                                                                                           
+    "mean": 139597.28140848316,                                                                                                                   
+    "median": 17245.0,                                                                                                                           
+    "sequence_count": 17352,                                                                                                                      
+    "shortest": 1,                                                                                                                               
+    "total_bps": 2422292027                                                                                                                       
+  },                                                                                                                                             
+  "Scaffold Stats": {                                                                                                                             
+    "L10": 66,                                                                                                                                    
+    "L20": 170,                                                                                                                                  
+    "L30": 306,                                                                                                                                   
+    "L40": 482,                                                                                                                                  
+    "L50": 707,                                                                                                                                   
+    "N10": 2767002,                                                                                                                              
+    "N20": 2026203,                                                                                                                               
+    "N30": 1558597,                                                                                                                               
+    "N40": 1222272,                                                                                                                              
+    "N50": 948263,                                                                                                                                
+    "gc_content": 43.80470629357358,                                                                                                             
+    "longest": 7314449,                                                                                                                           
+    "mean": 150927.9801246106,                                                                                                                   
+    "median": 15611.5,                                                                                                                            
+    "sequence_count": 16050,                                                                                                                      
+    "shortest": 391,                                                                                                                             
+    "total_bps": 2422394081  
+
+
+
+# 13.BUSCO
+
+-	Run BUSCO after Kraken2
+
+* Folder: /scratch/genomics/piranir/Kraken2/
+* 2 JOB: busco3_afterKraken.job
+
+ 	+ **module**: ```module load bioinformatics/busco/3.0.2 ```
+
+ 	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
+			```run_BUSCO.py -m genome -i anolis_d1_r4_not_cont.fa -o Anolis_afterK -l tetrapoda_odb9 -c $NSLOTS ```                                                                                               
+                                                                                          
+
+
+--------------------------------
+
+#### BUSCO RESULTS: 
+ C:88.3%[S:87.3%,D:1.0%],F:6.9%,M:4.8%,n:3950                                                                                                  
+        3487    Complete BUSCOs (C)                                                                                                                   
+        3448    Complete and single-copy BUSCOs (S)                                       
+        39      Complete and duplicated BUSCOs (D)                                                                                                    
+        274     Fragmented BUSCOs (F)                                                                                                                 
+        3950    Total BUSCO groups searched 
+
+
+RESULTS: Also here are the assembly stats before and after kraken.
+We just remove 0.25% of the total length of the genome. This was include in 613 contigs that I have deleted from the assembly.
+
+
+#### RESULTS: Anolis genome after removing 613 contigs - FINAL
+
 
 {
 
@@ -893,42 +966,6 @@ Now you can filter those contigs
 }
 
 
-
-
-RESULTS: Also here are the assembly stats before and after kraken.
-We just remove 0.25% of the total length of the genome. This was include in 613 contigs that I have deleted from the assembly.
-
-
-
-
-
-# 13.BUSCO
-
--	Run BUSCO after Kraken2
-
-* Folder: /scratch/genomics/piranir/Kraken2/
-* 2 JOB: busco3_afterKraken.job
-
- 	+ **module**: ```module load bioinformatics/busco/3.0.2 ```
-
- 	+ **command**: ```export AUGUSTUS_CONFIG_PATH="/scratch/genomics/piranir/Busco/augustus/config" ```                                                             
-			```run_BUSCO.py -m genome -i anolis_d1_r4_not_cont.fa -o Anolis_afterK -l tetrapoda_odb9 -c $NSLOTS ```                                                                                               
-                                                                                          
-
-
---------------------------------
-
-#### BUSCO RESULTS: 
- C:88.3%[S:87.3%,D:1.0%],F:6.9%,M:4.8%,n:3950                                                                                                  
-        3487    Complete BUSCOs (C)                                                                                                                   
-        3448    Complete and single-copy BUSCOs (S)                                       
-        39      Complete and duplicated BUSCOs (D)                                                                                                    
-        274     Fragmented BUSCOs (F)                                                                                                                 
-        3950    Total BUSCO groups searched 
-
-										
-
- 
 
 # 14.Hi-C technology/Dovetail files 
 
