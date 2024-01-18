@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors: "PIRANI, R. M., ARIAS, C., CURLIS, J. D., NICHOLSON, D. J., CHUNG, A. K., VARGAS, M., CHARLES, K., COX, C. L., MCMILLAN, W. O., LOGAN, M. L."
+title: "A high-quality genome for the slender anole (Anolis apletophallus): an emerging model for field studies of tropical ecology and evolution"
+Journal: G3 Genes/Genomics/Genetics
+doi: https://doi.org/10.1093/g3journal/jkad248
+date-released: 2024-01-18
+url: "https://github.com/renatapirani/Genome-Anolis-apletophallus"
